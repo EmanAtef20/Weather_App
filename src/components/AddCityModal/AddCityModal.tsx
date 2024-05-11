@@ -1,8 +1,6 @@
 import React, {FC, useState} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import Modal from 'react-native-modal';
-import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
-import { AutocompleteDropdown } from 'react-native-autocomplete-dropdown';
 import { Dropdown } from 'react-native-element-dropdown';
 import tw from '@/tw';
 /**
