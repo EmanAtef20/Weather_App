@@ -89,7 +89,7 @@ export const HomeScreen = ({ navigation: { navigate } }) => {
         />
         <TouchableOpacity 
         style={[
-          tw.style(`bg-main w-35 h-14 br-7 itemms-center flex-row items-center rounded-full pl-4`),
+          tw.style(`bg-main w-35 h-14 br-7 items-center flex-row items-center rounded-full pl-4`),
           absoluteStyle,
         ]}
         onPress={addCity}

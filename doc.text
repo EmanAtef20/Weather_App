@@ -1,0 +1,57 @@
+This document outlines the functionalities and technical details of a simple weather application. The app allows users to:
+
+Maintain a list of cities.
+Get current weather information for each city.
+View historical weather data for each city (all previous weather requests made for that city).
+See detailed weather information for a selected city.
+Technical Specifications:
+
+Frontend: The application will be a mobile application.
+Data Source: The application will use an external weather API (Endpoint 1) to retrieve weather data for the cities.
+Database: The application will maintain a global and local state  to store user-added cities and historical weather data.
+
+used zustand for global state an a state management becouse it have many advantage like 
+Zustand is a small library designed for performance
+Zustand offers a clean and easy-to-learn API. Compared to other state management solutions like Redux,
+Zustand supports splitting your state and logic into smaller, composable "stores." This allows you to manage complex applications with ease and keep your weather app maintainable as it grows.
+Zustand is well-suited for managing the state specific to your weather application, such as the list of cities, current weather data, and historical records
+(i will do this as an improvement to store historical data and cities using it instead of ad a global props)
+
+used @tanstack/react-query for managing api requests witth axios to fetch data
+React Query manages the data lifecycle efficiently. It handles caching, refetching, and invalidation strategies, reducing the need for manual data manipulation in your components. This simplifies code and improves maintainability.
+
+User Interface:
+
+City List:
+A table will display the list of cities added by the user.
+Users can add new city names to the table.
+City Details:
+Clicking on a city name will navigate to a detail page displaying the following weather information:
+weather.description (textual description of the weather)
+main.temp (converted from Kelvin to Celsius)
+main.humidity (percentage)
+wind.speed
+During data fetching from the weather API, a loading indicator will be displayed.
+used tailwind to handle ui style
+ailwind promotes a consistent and reusable style base.  Classes are well-documented and easy to understand, making it simpler to maintain your codebase as your weather application grows.
+and react navigation package to handle navigate between screens
+Data Model:
+
+City:
+name (string) - City name.
+historicalData (array) - Array of historical weather records for the city.
+API Calls:
+
+Endpoint 1: (Details about the specific API and its functionalities are not provided in this document.) This endpoint will be used to retrieve current weather information for a city. The response format is assumed to include:
+weather.description (string)
+main.temp (float) - Temperature in Kelvin
+main.humidity (integer) - Humidity in percentage
+wind.speed (float) - Wind speed
+Implementation Notes:
+
+The application is utilize asynchronous programming techniques to fetch weather data without blocking the user interface.
+Error handling is implemented to gracefully handle cases where API requests fail or data is invalid.
+Future Considerations:
+
+Implemented local and global state of user data (cities and historical data)
+Add functionalities like searching for cities or displaying historical weather data.
