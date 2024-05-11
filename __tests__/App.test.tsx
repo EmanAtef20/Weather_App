@@ -10,7 +10,13 @@ import App from '../App';
 import {it} from '@jest/globals';
 
 // Note: test renderer must be required after react-native.
-import renderer from 'react-test-renderer';
+import renderer, {create} from 'react-test-renderer';
+import {CityRow} from '../src/components/CityRow';
+
+
+it('render header', () => {
+  renderer.create(<CityRow  item={{name: "London"}} onCityNameClick={ () => {}} onCityHistoryClick= {() => {}}/>);
+})
 
 it('renders correctly', () => {
   renderer.create(<App />);
